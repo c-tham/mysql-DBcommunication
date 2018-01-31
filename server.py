@@ -76,7 +76,7 @@ def create():
 @app.route('/update', methods=['POST'])
 def update():
     print 'update'
-    query = "UPDATE friends SET first_name = :first_name, last_name = :last_name, occupation = :occupation WHERE id = :id"
+    query = "UPDATE friends SET first_name = :first_name, last_name = :last_name, occupation = :occupation , updated_at = now() WHERE id = :id"
     data = {
              'first_name': request.form['first_name'],
              'last_name':  request.form['last_name'],
